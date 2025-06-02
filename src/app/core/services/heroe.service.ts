@@ -63,9 +63,11 @@ export class HeroeService {
   getHeroes(){
     return this.heroes;
   }
+
   getHeroe(idx: number){
     return this.heroes[idx];
   }
+  
   buscarHeroe(termino: string): Heroe[]{
      let heroeArr: Heroe[] = [];
      termino = termino.toLowerCase();

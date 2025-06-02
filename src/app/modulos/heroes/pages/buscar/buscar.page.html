@@ -1,0 +1,8 @@
+<app-header [title]="'Buscador de heroes'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <h1>"{{query}}"</h1>
+  <div style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center;">
+    <app-card-heroe style="max-width: 300px; width: 100%;" *ngFor="let heroe of heroes" [heroe]="heroe" ></app-card-heroe>
+  </div>
+</ion-content>

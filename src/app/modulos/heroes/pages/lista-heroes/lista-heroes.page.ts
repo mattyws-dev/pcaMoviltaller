@@ -5,19 +5,24 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonLabel, IonItem
 import { HeaderPage } from "../../../../shared/components/header/header.page";
 import { CardHeroePage } from "../../components/card-heroe/card-heroe.page";
 import { HeroeService } from 'src/app/core/services/heroe.service';
+import { Heroe } from 'src/app/shared/models/heroe';
 
 @Component({
   selector: 'app-lista-heroes',
   templateUrl: './lista-heroes.page.html',
   styleUrls: ['./lista-heroes.page.scss'],
   standalone: true,
-  imports: [IonCard, IonItem, IonLabel, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, HeaderPage, CardHeroePage]
+  imports: [IonContent, CommonModule, FormsModule, HeaderPage, CardHeroePage]
 })
 export class ListaHeroesPage implements OnInit {
 
   constructor(public _heroeService:HeroeService) { }
 
   ngOnInit() {
+  }
+
+  inforHeroe(heroe: Heroe){
+    console.log(heroe);
   }
 
 

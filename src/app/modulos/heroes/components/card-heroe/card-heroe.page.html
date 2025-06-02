@@ -3,11 +3,34 @@
   <img [src]="heroe.img" alt="{{heroe.nombre}}">
   <ion-card-header>
     <ion-card-title>{{heroe.nombre}}</ion-card-title>
-    <ion-card-content>
-      {{heroe.aparicion}}
-    </ion-card-content>
+    {{heroe.aparicion}}
+  </ion-card-header>
+  <ion-card-content style="padding: 10px;">
     <ion-button (click)="verHeroe()">
       Ver Detalles
     </ion-button>
-  </ion-card-header>
+  </ion-card-content>
 </ion-card>
+
+<ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{heroe.nombre}} {{heroe.aparicion | date:'y'}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen()"><ion-icon slot="end" name="close"></ion-icon></ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div style="display: flex; flex-direction: column; align-items: center; align-items: center; text-align: left;">
+          <img [src]="heroe.img" [alt]="heroe.nombre">
+          <h1>{{heroe.nombre}}</h1>
+          <hr>
+          <p>{{heroe.bio}}</p>
+          <img  style="max-width: 200px; width: 100%;" *ngIf="heroe.casa === 'DC'" src="/assets/img/DC_Comics_logo.png" alt="DC">
+          <img  style="max-width: 200px; width: 100%;" *ngIf="heroe.casa === 'Marvel'" src="/assets/img/MarvelLogo.svg.png" alt="Marvel">
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>

@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'about',
     loadComponent: () => import('./modulos/about/about.page').then( m => m.AboutPage)
   },
+  {
+    path: 'buscar/:query',
+    loadComponent: () => import('./modulos/heroes/pages/buscar/buscar.page').then( m => m.BuscarPage)
+  },
 ];

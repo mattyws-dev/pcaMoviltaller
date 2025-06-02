@@ -1,15 +1,8 @@
 <app-header [title]="'Heroes'"></app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item>
-      <ion-label><h1>Heroes DC y Marvel</h1></ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item *ngFor="let heroe of _heroeService.getHeroes()">
-      <app-card-heroe [heroe]="heroe"></app-card-heroe>
-    </ion-item>
-
-  </ion-list>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h1>Heroes DC y Marvel</h1>
+  <div style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center;">
+    <app-card-heroe style="max-width: 300px; width: 100%;" (heroeSeleccionado)="inforHeroe($event)" *ngFor="let heroe of _heroeService.getHeroes()" [heroe]="heroe" ></app-card-heroe>
+  </div>
 </ion-content>
